@@ -1,0 +1,31 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Nama</th>
+      <th>Harga</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < keyboardSwitch.length; i++){ %>
+    <tr>
+      <td><%= i + 1%></td>
+      <td><%= keyboardSwitch[i].switchName %></td>
+      <td><%= keyboardSwitch[i].price %></td>
+      <td>
+        <form action="/switch/delete/<%= keyboardSwitch[i]._id %>?_method=DELETE" method="POST">
+          <a href="/switch/edit/<%= keyboardSwitch[i]._id %>" class="btn btn-warning">
+            <i class="fas fa-pencil-alt"></i>
+            Ubah
+          </a>
+          <button class="btn btn-danger">
+            <i class="fas fa-trash"></i>
+            Hapus
+          </button>
+        </form>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
